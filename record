@@ -1,0 +1,26 @@
+create table student1(stid number(4) primary key,sname varchar2(20),sage number(5),scgpa real);
+insert into student1(stid,sname,sage,scgpa)values(000,'Bhargav',22,9.5);
+insert into student1(stid,sname,sage,scgpa)values(001,'nischal',20,9.4);
+insert into student1(stid,sname,sage,scgpa)values(002,'Anirudh',21,9.3);
+insert into student1(stid,sname,sage,scgpa)values(003,'Abhishek',20,9.6);
+insert into student1(stid,sname,sage,scgpa)values(004,'Adithya',19,8.9);
+insert into student1(stid,sname,sage,scgpa)values(005,'Vinuthna',19,8.5);
+select * from student1;
+
+create table course1(cid number(4) primary key,cname varchar2(20),credits real);
+insert into course1(cid,cname,credits)values(101,'DBMS',5);
+insert into course1(cid,cname,credits)values(201,'FLAT',4);
+insert into course1(cid,cname,credits)values(301,'DAA',4);
+insert into course1(cid,cname,credits)values(401,'SE',3);
+insert into course1(cid,cname,credits)values(501,'BOF',3);
+insert into course1(cid,cname,credits)values(601,'EEM',2);
+select * from course1;
+
+create table enrolledin2(stid number(4),cid number(4),grade varchar2(2),foreign key(stid) references student1,foreign key(cid) references course1,primary key(stid,cid));
+insert into enrolledin2(stid,cid,grade)values(000,101,'A');
+insert into enrolledin2(stid,cid,grade)values(001,201,'O');
+insert into enrolledin2(stid,cid,grade)values(002,301,'O');
+insert into enrolledin2(stid,cid,grade)values(003,401,'B');
+insert into enrolledin2(stid,cid,grade)values(004,501,'B');
+insert into enrolledin2(stid,cid,grade)values(005,601,'A');
+select * from enrolledin2;
